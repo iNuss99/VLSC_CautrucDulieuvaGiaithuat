@@ -1,0 +1,57 @@
+﻿using System;
+
+namespace DSA_Lesson1
+{
+    class SinhVien
+    {
+        public string HoTen { get; set; }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("=== Bai tap 1: Tham chieu ===");
+
+            SinhVien sv1 = new SinhVien { HoTen = "Nguyen Van An" };
+            SinhVien sv2 = sv1;
+
+            sv2.HoTen = "Tran Thi Binh";
+
+            Console.WriteLine($"Ten cua sv1 sau khi thay doi qua sv2: {sv1.HoTen}");
+
+            Console.WriteLine("\n=== Bai tap 2: Hoan doi (Swap) ===");
+
+            int a = 10, b = 20;
+            Console.WriteLine($"Truoc khi Swap: a = {a}, b = {b}");
+
+            Swap(ref a, ref b);
+
+            Console.WriteLine($"Sau khi Swap: a = {a}, b = {b}");
+
+            Console.WriteLine("\n=== Bai tap 3: Thao tac mang ===");
+
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            PrintArray(numbers);
+        }
+
+        static void Swap(ref int x, ref int y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        static void PrintArray(int[] arr)
+        {
+            Console.Write("Cac phan tu trong mang: ");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
